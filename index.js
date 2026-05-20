@@ -166,11 +166,7 @@ setInterval(kickExpiredUsers, 24 * 60 * 60 * 1000);
 
 const https = require('https');
 setInterval(() => {
-  https.get('https://tg-sub-bot-1-2bba.onrender.com', (res) => {
-    console.log('Ping: bot kept alive');
-  }).on('error', (err) => {
-    console.log('Ping error:', err.message);
-  });
+  https.get('https://tg-sub-bot-1-2bba.onrender.com').on('error', () => {});
 }, 14 * 60 * 1000);
 
 app.listen(3000, () => console.log('🚀 Server running!'));
